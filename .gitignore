@@ -1,0 +1,14 @@
+# IDE specific
+.idea/
+.spyderproject
+# file
+*.pyc
+manage.py
+dump.json
+MANIFEST
+# dir
+build/
+dist/
+*.egg-info/
+logs/
+src/
