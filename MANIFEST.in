@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+include ChangeLog.rst
+include AUTHORS.rst
+recursive-include stop_words/stop-words *.txt
