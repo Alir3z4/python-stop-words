@@ -68,3 +68,15 @@ def get_stop_words(language):
     STOP_WORDS_CACHE[language] = stop_words
 
     return stop_words
+
+
+def safe_get_stop_words(language):
+    """
+    :type language: basestring
+
+    :rtype: list
+    """
+    try:
+        return get_stop_words(language)
+    except StopWordError:
+        return []
