@@ -33,7 +33,7 @@ http://pypi.python.org/pypi/stop-words
 
 So easily install it by ``pip``
 ::
-    
+
     $ pip install stop-words
 
 Or by ``easy_install``
@@ -50,3 +50,11 @@ Then install it by running:
 
     $ python setup.py install
 
+
+Basic usage
+-----------
+::
+
+    from stop_words import get_stop_words
+
+    stop_words = get_stop_words('english')
