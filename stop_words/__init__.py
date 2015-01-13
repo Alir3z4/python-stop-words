@@ -50,6 +50,9 @@ def get_stop_words(language):
     if language not in AVAILABLE_LANGUAGES:
         raise StopWordError('%s language is unavailable')
 
-    with open('{0}{1}.txt'.format(STOP_WORDS_DIR, language)) as lang_file:
-        lines = lang_file.readlines()
-        return [str(line.strip()).decode('utf-8') for line in lines]
+    try:
+        with open('{0}{1}.txt'.format(STOP_WORDS_DIR, language)) as lang_file:
+            lines = lang_file.readlines()
+            return [str(line.strip()).decode('utf-8') for line in lines]
+    except IOError:
+        raise StopWordError('%s file is unreadable, check your installation')
