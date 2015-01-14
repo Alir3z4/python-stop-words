@@ -59,4 +59,7 @@ Basic usage
 
     stop_words = get_stop_words('en')
     stop_words = get_stop_words('english')
+
+    from stop_words import safe_get_stop_words
+
     stop_words = safe_get_stop_words('unsupported language')
