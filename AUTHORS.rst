@@ -11,6 +11,7 @@ people who have submitted patches, reported bugs, added translations, helped
 answer newbie questions, and generally made ``python-stop-words`` that much better:
 
 * Alireza Savand <alireza.savand@gmail.com>
+* Julien Fache <fantomas42@gmail.com>
 
 
 A big THANK YOU goes to:
