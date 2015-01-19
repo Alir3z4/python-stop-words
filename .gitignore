@@ -12,3 +12,4 @@ dist/
 *.egg-info/
 logs/
 src/
+.c9/
