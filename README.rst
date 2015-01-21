@@ -63,3 +63,9 @@ Basic usage
     from stop_words import safe_get_stop_words
 
     stop_words = safe_get_stop_words('unsupported language')
+
+Python compatibility
+--------------------
+
+Python-stop-words has been originally developed for Python 2, but has been
+ported and tested for Python 3.2 to Python 3.4.
