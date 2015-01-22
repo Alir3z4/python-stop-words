@@ -57,8 +57,8 @@ def get_stop_words(language):
 
     try:
         language_filename = '{0}{1}.txt'.format(STOP_WORDS_DIR, language)
-        with open(language_filename) as language_file:
-            stop_words = [str(line.strip()).decode('utf-8')
+        with open(language_filename, 'rb') as language_file:
+            stop_words = [line.strip().decode('utf-8')
                           for line in language_file.readlines()]
     except IOError:
         raise StopWordError(
