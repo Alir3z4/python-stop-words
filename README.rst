@@ -2,7 +2,50 @@
 Python Stop Words
 =================
 
+.. contents:: Table of contents
+
+Overview
+--------
+
 Get list of common stop words in various languages in Python.
+
+.. image:: https://secure.travis-ci.org/Alir3z4/python-stop-words.png
+   :alt: Build Status
+   :target: http://travis-ci.org/Alir3z4/python-stop-words
+
+
+.. image:: https://coveralls.io/repos/Alir3z4/python-stop-words/badge.png
+   :alt: Coverage Status
+   :target: https://coveralls.io/r/Alir3z4/python-stop-words
+
+
+.. image:: https://pypip.in/d/stop-words/badge.png
+   :alt: Downloads
+   :target: https://pypi.python.org/pypi/stop-words/
+
+
+.. image:: https://pypip.in/v/stop-words/badge.png
+   :alt: Version
+   :target: https://pypi.python.org/pypi/stop-words/
+
+
+.. image:: https://pypip.in/egg/stop-words/badge.png
+   :alt: Egg
+   :target: https://pypi.python.org/pypi/stop-words/
+
+
+.. image:: https://pypip.in/wheel/stop-words/badge.png
+   :alt: Wheel
+   :target: https://pypi.python.org/pypi/stop-words/
+
+
+.. image:: https://pypip.in/format/stop-words/badge.png
+   :alt: Format
+   :target: https://pypi.python.org/pypi/stop-words/
+
+.. image:: https://pypip.in/license/stop-words/badge.png
+   :alt: License
+   :target: https://pypi.python.org/pypi/stop-words/
 
 Available languages
 -------------------
