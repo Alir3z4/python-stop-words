@@ -7,6 +7,7 @@ STOP_WORDS_CACHE = {}
 
 LANGUAGE_MAPPING = {
     'ar': 'arabic',
+    'ca': 'catalan',
     'da': 'danish',
     'nl': 'dutch',
     'en': 'english',
