@@ -51,6 +51,7 @@ Available languages
 -------------------
 
 * Arabic
+* Catalan
 * Danish
 * Dutch
 * English
