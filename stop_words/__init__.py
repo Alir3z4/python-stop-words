@@ -7,6 +7,7 @@ STOP_WORDS_CACHE = {}
 
 LANGUAGE_MAPPING = {
     'ar': 'arabic',
+    'ca': 'catalan',
     'da': 'danish',
     'nl': 'dutch',
     'en': 'english',
@@ -58,7 +59,7 @@ def get_stop_words(language):
     try:
         language_filename = '{0}{1}.txt'.format(STOP_WORDS_DIR, language)
         with open(language_filename, 'rb') as language_file:
-            stop_words = [line.strip().decode('utf-8')
+            stop_words = [line.decode('utf-8').strip()
                           for line in language_file.readlines()]
     except IOError:
         raise StopWordError(
