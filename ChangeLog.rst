@@ -1,6 +1,15 @@
+2015.1.31
+=========
+----
+
+* Feature #5: Decode error AND Add ``catalan`` language to ``LANGUAGE_MAPPING`.
+* Feature: Update `stop-words` dictionary.
+
+
 2015.1.22
 =========
 ----
+
 * Feature: Tests
 * Feature: Python 3 support
 * Feature: Dev installation via zc.buildout
