@@ -12,6 +12,7 @@ answer newbie questions, and generally made ``python-stop-words`` that much bett
 
 * Alireza Savand <alireza.savand@gmail.com>
 * Julien Fache <fantomas42@gmail.com>
+* David Miró <lite.3engine@gmail.com>
 
 
 A big THANK YOU goes to:
