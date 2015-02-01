@@ -8,7 +8,7 @@ python:
 install:
     - git submodule init
     - git submodule update
-    - pip install -U setuptools
+    - pip install -U setuptools coveralls
     - python bootstrap.py
     - ./bin/buildout
 before_script:
@@ -18,3 +18,5 @@ script:
 notifications:
     irc:
         - "irc.freenode.org#python-stop-words"
+after_success:
+    coveralls
