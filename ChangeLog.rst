@@ -1,3 +1,10 @@
+2015.2.20
+=========
+----
+
+* Feature: ``LANGUAGE_MAPPING`` is loads from stop-words/languages.json
+* Fix: Made paths OS-independent
+
 2015.1.31
 =========
 ----

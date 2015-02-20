@@ -1,29 +1,15 @@
+import json
 import os
 
-__VERSION__ = (2015, 1, 31)
+__VERSION__ = (2015, 2, 20)
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
-STOP_WORDS_DIR = os.path.join(CURRENT_DIR, 'stop-words/')
+STOP_WORDS_DIR = os.path.join(CURRENT_DIR, 'stop-words')
 STOP_WORDS_CACHE = {}
 
-LANGUAGE_MAPPING = {
-    'ar': 'arabic',
-    'ca': 'catalan',
-    'da': 'danish',
-    'nl': 'dutch',
-    'en': 'english',
-    'fi': 'finnish',
-    'fr': 'french',
-    'de': 'german',
-    'hu': 'hungarian',
-    'it': 'italian',
-    'nb': 'norwegian',
-    'pt': 'portuguese',
-    'ro': 'romanian',
-    'ru': 'russian',
-    'es': 'spanish',
-    'sv': 'swedish',
-    'tr': 'turkish',
-}
+with open(os.path.join(STOP_WORDS_DIR, 'languages.json'), 'rb') as mapping_file:
+    buffer = mapping_file.read()
+    buffer = buffer.decode('ascii')
+    LANGUAGE_MAPPING = json.loads(buffer)
 
 AVAILABLE_LANGUAGES = LANGUAGE_MAPPING.values()
 
@@ -48,16 +34,14 @@ def get_stop_words(language):
     try:
         language = LANGUAGE_MAPPING[language]
     except KeyError:
-        pass
-
-    if language not in AVAILABLE_LANGUAGES:
-        raise StopWordError('"%s" language is unavailable.' % language)
+        if language not in AVAILABLE_LANGUAGES:
+            raise StopWordError('"%s" language is unavailable.' % language)
 
     if language in STOP_WORDS_CACHE:
         return STOP_WORDS_CACHE[language]
 
+    language_filename = os.path.join(STOP_WORDS_DIR, language + '.txt')
     try:
-        language_filename = '{0}{1}.txt'.format(STOP_WORDS_DIR, language)
         with open(language_filename, 'rb') as language_file:
             stop_words = [line.decode('utf-8').strip()
                           for line in language_file.readlines()]
