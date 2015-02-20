@@ -67,7 +67,7 @@ Available languages
 * Spanish
 * Swedish
 * Turkish
-
+* Ukrainian
 
 Installation
 ------------
