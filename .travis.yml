@@ -8,6 +8,7 @@ python:
 install:
     - git submodule init
     - git submodule update
+    - git submodule foreach git pull origin master
     - pip install -U setuptools coveralls
     - python bootstrap.py
     - ./bin/buildout

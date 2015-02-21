@@ -6,9 +6,8 @@ CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 STOP_WORDS_DIR = os.path.join(CURRENT_DIR, 'stop-words')
 STOP_WORDS_CACHE = {}
 
-with open(os.path.join(STOP_WORDS_DIR, 
-                      'languages.json'), 'rb') as mapping_file:
-    buffer = mapping_file.read()
+with open(os.path.join(STOP_WORDS_DIR, 'languages.json'), 'rb') as map_file:
+    buffer = map_file.read()
     buffer = buffer.decode('ascii')
     LANGUAGE_MAPPING = json.loads(buffer)
 
@@ -38,8 +37,7 @@ def get_stop_words(language):
         if language not in AVAILABLE_LANGUAGES:
             raise StopWordError('{0}" language is unavailable.'.format(
                 language
-            )
-        )
+            ))
 
     if language in STOP_WORDS_CACHE:
         return STOP_WORDS_CACHE[language]
