@@ -35,7 +35,7 @@ def get_stop_words(language):
         language = LANGUAGE_MAPPING[language]
     except KeyError:
         if language not in AVAILABLE_LANGUAGES:
-            raise StopWordError('"%s" language is unavailable.' % language)
+            raise StopWordError('{0}" language is unavailable.'.format(language))
 
     if language in STOP_WORDS_CACHE:
         return STOP_WORDS_CACHE[language]
@@ -47,8 +47,10 @@ def get_stop_words(language):
                           for line in language_file.readlines()]
     except IOError:
         raise StopWordError(
-            '"%s" file is unreadable, check your installation.' %
-            language_filename)
+            '{0}" file is unreadable, check your installation.'.format(
+                language_filename
+            )
+        )
 
     STOP_WORDS_CACHE[language] = stop_words
 
