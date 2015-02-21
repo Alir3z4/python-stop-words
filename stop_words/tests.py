@@ -59,8 +59,10 @@ class StopWordsTestCase(TestCase):
         sample = random.sample(languages, len(languages))
         for language in sample:
             stop_words = safe_get_stop_words(language)
-            self.assertTrue(len(stop_words) > 0,
-                            'Cannot load stopwords for %s language' % language)
+            self.assertTrue(
+                len(stop_words) > 0,
+                'Cannot load stopwords for {0} language'.format(language)
+            )
 
 loader = TestLoader()
 
