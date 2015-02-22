@@ -1,3 +1,9 @@
+2015.2.22
+=========
+----
+
+* Feature: Using the cache is optional
+
 2015.2.20
 =========
 ----

@@ -25,7 +25,7 @@ class StopWordError(Exception):
     pass
 
 
-def get_stop_words(language):
+def get_stop_words(language, cache=True):
     """
     :type language: basestring
 
@@ -37,7 +37,7 @@ def get_stop_words(language):
         if language not in AVAILABLE_LANGUAGES:
             raise StopWordError('"%s" language is unavailable.' % language)
 
-    if language in STOP_WORDS_CACHE:
+    if cache and language in STOP_WORDS_CACHE:
         return STOP_WORDS_CACHE[language]
 
     language_filename = os.path.join(STOP_WORDS_DIR, language + '.txt')
@@ -50,7 +50,8 @@ def get_stop_words(language):
             '"%s" file is unreadable, check your installation.' %
             language_filename)
 
-    STOP_WORDS_CACHE[language] = stop_words
+    if cache:
+        STOP_WORDS_CACHE[language] = stop_words
 
     return stop_words
 
