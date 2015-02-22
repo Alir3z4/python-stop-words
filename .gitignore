@@ -13,3 +13,6 @@ dist/
 logs/
 src/
 .c9/
+bin/
+develop-eggs/
+eggs/

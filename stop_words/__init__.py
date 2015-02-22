@@ -1,13 +1,13 @@
 import json
 import os
 
-__VERSION__ = (2015, 2, 20)
+__VERSION__ = (2015, 2, 21)
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 STOP_WORDS_DIR = os.path.join(CURRENT_DIR, 'stop-words')
 STOP_WORDS_CACHE = {}
 
-with open(os.path.join(STOP_WORDS_DIR, 'languages.json'), 'rb') as mapping_file:
-    buffer = mapping_file.read()
+with open(os.path.join(STOP_WORDS_DIR, 'languages.json'), 'rb') as map_file:
+    buffer = map_file.read()
     buffer = buffer.decode('ascii')
     LANGUAGE_MAPPING = json.loads(buffer)
 
@@ -35,7 +35,9 @@ def get_stop_words(language, cache=True):
         language = LANGUAGE_MAPPING[language]
     except KeyError:
         if language not in AVAILABLE_LANGUAGES:
-            raise StopWordError('"%s" language is unavailable.' % language)
+            raise StopWordError('{0}" language is unavailable.'.format(
+                language
+            ))
 
     if cache and language in STOP_WORDS_CACHE:
         return STOP_WORDS_CACHE[language]
@@ -47,8 +49,10 @@ def get_stop_words(language, cache=True):
                           for line in language_file.readlines()]
     except IOError:
         raise StopWordError(
-            '"%s" file is unreadable, check your installation.' %
-            language_filename)
+            '{0}" file is unreadable, check your installation.'.format(
+                language_filename
+            )
+        )
 
     if cache:
         STOP_WORDS_CACHE[language] = stop_words

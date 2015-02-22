@@ -4,12 +4,13 @@
 
 * Feature: Using the cache is optional
 
-2015.2.20
+2015.2.21
 =========
 ----
 
 * Feature: ``LANGUAGE_MAPPING`` is loads from stop-words/languages.json
 * Fix: Made paths OS-independent
+
 
 2015.1.31
 =========
@@ -44,3 +45,4 @@
 * Initial release.
 * Package on pypi.
 * github.com/Alir3z4/stop-words as submodule.
+
