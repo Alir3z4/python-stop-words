@@ -1,8 +1,9 @@
-2015.2.22
+2015.2.23
 =========
 ----
 
 * Feature: Using the cache is optional
+* Feature: Filtering stopwords
 
 2015.2.21
 =========

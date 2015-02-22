@@ -16,3 +16,4 @@ src/
 bin/
 develop-eggs/
 eggs/
+stop_words/stop-words/
