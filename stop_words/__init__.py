@@ -89,7 +89,7 @@ def add_filter(func, language=None):
     :param language: string|None
     :return:
     """
-    if not language in _filters:
+    if language not in _filters:
         _filters[language] = []
     _filters[language].append(func)
 
