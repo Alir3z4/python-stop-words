@@ -13,6 +13,7 @@ setup(
     package_data={
         'stop_words': [
             'stop-words/*.txt',
+            'stop-words/languages.json',
         ]
     },
     classifiers=[
