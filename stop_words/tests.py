@@ -10,7 +10,6 @@ import stop_words
 from stop_words import get_stop_words
 from stop_words import safe_get_stop_words
 from stop_words import StopWordError
-from stop_words import STOP_WORDS_CACHE
 from stop_words import LANGUAGE_MAPPING
 from stop_words import AVAILABLE_LANGUAGES
 
@@ -28,9 +27,9 @@ class StopWordsTestCase(TestCase):
         self.assertEqual(sw, get_stop_words('english'))
 
     def test_get_stop_words_cache(self):
-        self.assertFalse('french' in STOP_WORDS_CACHE)
+        self.assertFalse('french' in stop_words.STOP_WORDS_CACHE)
         sw = get_stop_words('fr')
-        self.assertTrue('french' in STOP_WORDS_CACHE)
+        self.assertTrue('french' in stop_words.STOP_WORDS_CACHE)
         original_stop_words_dir = stop_words.STOP_WORDS_DIR
         stop_words.STOP_WORDS_DIR = 'not-existing-directory'
         self.assertEqual(sw, get_stop_words('french'))
@@ -39,7 +38,7 @@ class StopWordsTestCase(TestCase):
             get_stop_words('klingon')
         except:
             pass
-        self.assertFalse('klingon' in STOP_WORDS_CACHE)
+        self.assertFalse('klingon' in stop_words.STOP_WORDS_CACHE)
 
     def test_get_stop_words_unavailable_language(self):
         self.assertRaises(StopWordError, get_stop_words, 'sindarin')
@@ -63,6 +62,20 @@ class StopWordsTestCase(TestCase):
                 len(stop_words) > 0,
                 'Cannot load stopwords for {0} language'.format(language)
             )
+
+    def test_filters(self):
+            language = 'en'
+            before = get_stop_words(language, False)
+            letter = random.choice(random.choice(before))
+
+            def remove_letter(stopwords, language):
+                return [word for word in stopwords if letter not in word]
+            stop_words.add_filter(remove_letter)
+            after = get_stop_words(language, False)
+            for stopword in after:
+                self.assertFalse(letter in stopword)
+            self.assertTrue(stop_words.remove_filter(remove_letter))
+
 
 loader = TestLoader()
 

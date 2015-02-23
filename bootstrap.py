@@ -96,8 +96,6 @@ if options.setuptools_version is not None:
     setup_args['version'] = options.setuptools_version
 
 ez['use_setuptools'](**setup_args)
-import setuptools
-import pkg_resources
 
 # This does not (always?) update the default working set.  We will
 # do it.

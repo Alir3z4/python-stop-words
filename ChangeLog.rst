@@ -1,3 +1,10 @@
+2015.2.23
+=========
+----
+
+* Feature: Using the cache is optional
+* Feature: Filtering stopwords
+
 2015.2.21
 =========
 ----
@@ -39,3 +46,4 @@
 * Initial release.
 * Package on pypi.
 * github.com/Alir3z4/stop-words as submodule.
+
