@@ -1,3 +1,3 @@
 [submodule "stop_words/stop-words"]
 	path = stop_words/stop-words
-	url = https://github.com/Alir3z4/stop-words.git
+	url = git@github.com:Alir3z4/stop-words.git
