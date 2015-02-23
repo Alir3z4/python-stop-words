@@ -1,3 +1,10 @@
+2015.2.23.1
+=========
+----
+
+* Fix #9: Missing ``languages.json`` file that breaks the installation.
+
+
 2015.2.23
 =========
 ----

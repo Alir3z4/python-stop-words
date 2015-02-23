@@ -1,7 +1,7 @@
 import json
 import os
 
-__VERSION__ = (2015, 2, 23)
+__VERSION__ = (2015, 2, 23, 1)
 CURRENT_DIR = os.path.dirname(os.path.realpath(__file__))
 STOP_WORDS_DIR = os.path.join(CURRENT_DIR, 'stop-words')
 STOP_WORDS_CACHE = {}
