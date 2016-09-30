@@ -51,7 +51,9 @@ Available languages
 -------------------
 
 * Arabic
+* Bulgarian
 * Catalan
+* Czech
 * Danish
 * Dutch
 * English
@@ -59,8 +61,10 @@ Available languages
 * French
 * German
 * Hungarian
+* Indonesian
 * Italian
 * Norwegian
+* Polish
 * Portuguese
 * Romanian
 * Russian
@@ -69,9 +73,10 @@ Available languages
 * Turkish
 * Ukrainian
 
+
 Installation
 ------------
-``stop-words`` is available on PyPi
+``stop-words`` is available on PyPI
 
 http://pypi.python.org/pypi/stop-words
 
