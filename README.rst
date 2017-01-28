@@ -100,7 +100,7 @@ Or by ``easy_install``
 
 Another way is by cloning ``stop-words``'s `git repo <https://github.com/Alir3z4/python-stop-words>`_ ::
 
-    $ git clone git://github.com/Alir3z4/python-stop-words.git
+    $ git clone --recursive git://github.com/Alir3z4/python-stop-words.git
 
 Then install it by running:
 ::
