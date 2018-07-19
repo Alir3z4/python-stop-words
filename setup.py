@@ -10,6 +10,7 @@ setup(
     author_email='alireza.savand@gmail.com',
     url='https://github.com/Alir3z4/python-stop-words',
     packages=find_packages(),
+    zip_safe=False,
     package_data={
         'stop_words': [
             'stop-words/*.txt',
