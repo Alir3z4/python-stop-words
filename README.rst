@@ -17,14 +17,9 @@ Get list of common stop words in various languages in Python.
    :alt: Coverage Status
    :target: https://coveralls.io/r/Alir3z4/python-stop-words
 
-
 .. image:: http://badge.kloud51.com/pypi/v/stop-words.svg
     :target: https://pypi.python.org/pypi/stop-words
     :alt: PyPI Version
-
-.. image:: http://badge.kloud51.com/pypi/w/stop-words.svg
-    :target: https://pypi.python.org/pypi/stop-words
-    :alt: PyPI Wheel
 
 .. image:: http://badge.kloud51.com/pypi/s/stop-words.svg
     :target: https://pypi.python.org/pypi/stop-words
@@ -34,25 +29,9 @@ Get list of common stop words in various languages in Python.
     :target: https://github.com/Alir3z4/python-stop-words/blob/master/LICENSE
     :alt: License
 
-.. image:: http://badge.kloud51.com/pypi/f/stop-words.svg
-    :target: https://pypi.python.org/pypi/stop-words
-    :alt: PyPI Format
-
 .. image:: http://badge.kloud51.com/pypi/p/stop-words.svg
     :target: https://pypi.python.org/pypi/stop-words
     :alt: PyPI Py_versions
-
-.. image:: http://badge.kloud51.com/pypi/d/stop-words.svg
-    :target: https://pypi.python.org/pypi/stop-words
-    :alt: PyPI Downloads
-
-.. image:: http://badge.kloud51.com/pypi/i/stop-words.svg
-    :target: https://pypi.python.org/pypi/stop-words
-    :alt: PyPI Implementation
-
-.. image:: http://badge.kloud51.com/pypi/e/stop-words.svg
-    :target: https://pypi.python.org/pypi/stop-words
-    :alt: PyPI Egg
 
 
 Available languages
@@ -93,11 +72,6 @@ So easily install it by ``pip``
 
     $ pip install stop-words
 
-Or by ``easy_install``
-::
-
-    $ easy_install stop-words
-
 Another way is by cloning ``stop-words``'s `git repo <https://github.com/Alir3z4/python-stop-words>`_ ::
 
     $ git clone --recursive git://github.com/Alir3z4/python-stop-words.git
@@ -124,5 +98,10 @@ Basic usage
 Python compatibility
 --------------------
 
-Python-stop-words has been originally developed for Python 2, but has been
-ported and tested for Python 3.
+Python Stop Words is compatibe with:
+
+* Python 2.7
+* Python 3.4
+* Python 3.5
+* Python 3.6
+* Python 3.7
