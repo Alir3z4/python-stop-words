@@ -18,9 +18,18 @@ setup(
         ]
     },
     classifiers=[
-        "Programming Language :: Python",
-        "Intended Audience :: Developers",
-        "Operating System :: OS Independent",
-        "Topic :: Software Development"
+        'Programming Language :: Python',
+        'Intended Audience :: Developers',
+        'Operating System :: OS Independent',
+        'Topic :: Software Development',
+        'Development Status :: 6 - Mature',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Topic :: Text Processing',
+        'Topic :: Text Processing :: Filters',
+        'License :: OSI Approved :: BSD License',
     ],
 )
