@@ -84,7 +84,7 @@ Then install it by running:
 
 Basic usage
 -----------
-::
+.. code:: python
 
     from stop_words import get_stop_words
 
@@ -98,7 +98,7 @@ Basic usage
 Python compatibility
 --------------------
 
-Python Stop Words is compatibe with:
+Python Stop Words is compatible with:
 
 * Python 2.7
 * Python 3.4
