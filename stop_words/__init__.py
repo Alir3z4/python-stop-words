@@ -1,3 +1,4 @@
+from copy import deepcopy
 import json
 import os
 
@@ -58,7 +59,7 @@ def get_stop_words(language, cache=True):
     if cache:
         STOP_WORDS_CACHE[language] = stop_words
 
-    return stop_words
+    return stop_words[:]    # copy list, prevent being modified
 
 _filters = {None: []}
 
