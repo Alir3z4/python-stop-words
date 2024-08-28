@@ -14,6 +14,7 @@ answer newbie questions, and generally made ``python-stop-words`` that much bett
 * Julien Fache <fantomas42@gmail.com>
 * David Miró <lite.3engine@gmail.com>
 * Taras Labiak <kissarat@gmail.com>
+* Ryan Wong <ryanwong215@gmail.com>
 
 
 A big THANK YOU goes to:

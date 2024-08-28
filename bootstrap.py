@@ -25,7 +25,7 @@ import tempfile
 
 from optparse import OptionParser
 
-__version__ = '2015-07-01'
+__version__ = '2024-08-28'
 # See zc.buildout's changelog if this version is up to date.
 
 tmpeggs = tempfile.mkdtemp(prefix='bootstrap-')

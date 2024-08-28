@@ -1,3 +1,10 @@
+2024.8.28
+=========
+
+* Feature: Support latest version of Python (3.12+).
+* Feature: Support simplified chinese and traditional chinese stopwords
+
+
 2018.7.23
 =========
 

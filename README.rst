@@ -55,8 +55,10 @@ Available languages
 * Portuguese
 * Romanian
 * Russian
+* Simplified Chinese
 * Spanish
 * Swedish
+* Traditional Chinese
 * Turkish
 * Ukrainian
 
@@ -98,10 +100,15 @@ Basic usage
 Python compatibility
 --------------------
 
-Python Stop Words is compatibe with:
+Python Stop Words is compatible with:
 
 * Python 2.7
 * Python 3.4
 * Python 3.5
 * Python 3.6
 * Python 3.7
+* Python 3.8
+* Python 3.9
+* Python 3.10
+* Python 3.11
+* Python 3.12
