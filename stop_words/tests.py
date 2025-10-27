@@ -15,7 +15,7 @@ from stop_words import AVAILABLE_LANGUAGES
 
 
 class StopWordsTestCase(TestCase):
-    number_of_english_stop_words = 174
+    number_of_english_stop_words = 1298
 
     def test_get_stop_words(self):
         sw = get_stop_words('english')
