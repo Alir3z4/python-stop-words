@@ -12,7 +12,10 @@ dist/
 *.egg-info/
 logs/
 src/
-.c9/
 bin/
 develop-eggs/
 eggs/
+coverage.xml
+.coverage
+build
+stop_words/_version.py
