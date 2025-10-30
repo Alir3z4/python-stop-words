@@ -5,7 +5,7 @@ install: update_stop_words
 	pip install build
 
 update_stop_words:
-	git submodule update --remote --rebase
+	git submodule foreach git pull origin master --rebase
 
 test:
 	python -m unittest discover
