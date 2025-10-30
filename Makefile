@@ -1,6 +1,6 @@
 .PHONY: install test build release clean
 
-install:
+install: update_stop_words
 	pip install '.[dev]'
 	pip install build
 
