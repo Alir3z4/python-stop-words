@@ -28,7 +28,6 @@ A Python library providing curated lists of stop words across 34+ languages. Sto
 * **34+ Languages** - Extensive language support.
 * **Performance** - Built-in caching for fast repeated access.
 * **Flexible** - Custom filtering system for advanced use cases.
-* **Modern Python** - Full support for Python 3.8+, type hints included.
 * **Zero Dependencies** - Lightweight with no external requirements.
 
 
@@ -59,7 +58,7 @@ Installation
 
 **Requirements:**
 
-* Python 3.8 or higher
+* Usually any version of Python that supports type hints and probably has not been marked as EOL.
 
 
 Quick Start
