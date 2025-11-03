@@ -16,7 +16,7 @@ test: ## Run test suite
 	python -m unittest discover -s src/ -v
 
 coverage: ## Generate coverage report
-	coverage run -m unittest discover
+	coverage run -m unittest discover -s src/
 	coverage report
 	coverage xml
 

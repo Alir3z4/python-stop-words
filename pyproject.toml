@@ -58,6 +58,7 @@ omit = [
     "*distutils*",
     "venv/*",
     ".venv/*",
+    "_version.py",
 ]
 
 [tool.coverage.report]
