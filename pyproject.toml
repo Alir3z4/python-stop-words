@@ -18,9 +18,14 @@ classifiers = [
     "Topic :: Text Processing",
     "Topic :: Text Processing :: Filters",
 ]
-urls = {Homepage = "https://github.com/Alir3z4/python-stop-words"}
 requires-python = ">=3.11"
 dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Alir3z4/python-stop-words"
+Repository = "https://github.com/Alir3z4/python-stop-words.git"
+Issues = "https://github.com/Alir3z4/python-stop-words/issues"
+Changelog = "https://github.com/Alir3z4/python-stop-words/blob/main/ChangeLog.rst"
 
 [project.optional-dependencies]
 dev = [
@@ -31,19 +36,20 @@ dev = [
 ]
 
 [tool.setuptools_scm]
-write_to = "stop_words/_version.py"
+write_to = "src/stop_words/_version.py"
 
 [tool.setuptools]
 packages = ["stop_words"]
-
-[tool.setuptools.package-data]
-stop_words = [
+package-dir = {"" = "src"}
+package-data = {stop_words = [
     "stop-words/*.txt",
     "stop-words/languages.json",
-]
+]}
+
 
 [tool.mypy]
 python_version = "3.13"
+exclude_gitignore = true
 
 [tool.coverage.run]
 cover_pylib = false
@@ -79,16 +85,27 @@ exclude_lines = [
 skip_covered = true
 
 
-
 [tool.black]
 line-length = 120
-#skip-magic-trailing-comma = true
 target-version = ['py313']
 extend-exclude = '''
 /(
-  migrations
-  | build
+  build
   | \.venv
-  | stop_words/stop-words
+  | src/stop_words/stop-words
 )/
 '''
+
+
+[tool.isort]
+line_length = 120
+extend_skip = ["src/stop_words/stop-words", "src/stop_words/_version.py"]
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+indent = 4
+multi_line_output = 3
+include_trailing_comma = true
+order_by_type = true
+combine_as_imports = true
+lines_after_imports = 2
+float_to_top = true
+atomic = true

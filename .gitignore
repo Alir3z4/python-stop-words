@@ -11,11 +11,10 @@ build/
 dist/
 *.egg-info/
 logs/
-src/
 bin/
 develop-eggs/
 eggs/
 coverage.xml
 .coverage
 build
-stop_words/_version.py
+src/stop_words/_version.py

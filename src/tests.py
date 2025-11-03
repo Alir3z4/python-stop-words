@@ -2,11 +2,7 @@ import random
 from unittest import TestCase
 
 import stop_words
-from stop_words import AVAILABLE_LANGUAGES
-from stop_words import LANGUAGE_MAPPING
-from stop_words import StopWordError
-from stop_words import get_stop_words
-from stop_words import safe_get_stop_words
+from stop_words import AVAILABLE_LANGUAGES, LANGUAGE_MAPPING, StopWordError, get_stop_words, safe_get_stop_words
 
 
 class TestStopWords(TestCase):

@@ -1,6 +1,5 @@
 import json
 import os
-
 from typing import Callable
 
 
@@ -19,7 +18,7 @@ def get_version() -> str:
     """
     :rtype: basestring
     """
-    from ._version import __version__
+    from ._version import __version__  # type: ignore
 
     return __version__
 
