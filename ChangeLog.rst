@@ -1,3 +1,11 @@
+2025.11.4
+=========
+
+* Sync with latest of https://github.com/Alir3z4/stop-words.
+* Add much more tests and cleaned up the code.
+* Modernized Python packaging and publishing.
+
+
 2018.7.23
 =========
 

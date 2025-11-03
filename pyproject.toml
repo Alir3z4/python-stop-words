@@ -1,0 +1,112 @@
+[build-system]
+requires = ["setuptools>=61.2", "setuptools_scm[toml]>=3.4.3"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stop-words"
+description = "Get list of common stop words in various languages in Python"
+readme = "README.rst"
+authors = [{name = "Alireza Savand", email = "alireza.savand@gmail.com"}]
+license = "BSD-3-Clause"
+classifiers = [
+    "Programming Language :: Python",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development",
+    "Development Status :: 6 - Mature",
+    "Programming Language :: Python :: 3",
+    "Topic :: Text Processing",
+    "Topic :: Text Processing :: Filters",
+]
+requires-python = ">=3.11"
+dynamic = ["version"]
+
+[project.urls]
+Homepage = "https://github.com/Alir3z4/python-stop-words"
+Repository = "https://github.com/Alir3z4/python-stop-words.git"
+Issues = "https://github.com/Alir3z4/python-stop-words/issues"
+Changelog = "https://github.com/Alir3z4/python-stop-words/blob/main/ChangeLog.rst"
+
+[project.optional-dependencies]
+dev = [
+    "black==25.9.0",
+    "mypy==1.18.2",
+    "flake8==7.3.0",
+    "coverage==7.11.0",
+]
+
+[tool.setuptools_scm]
+write_to = "src/stop_words/_version.py"
+
+[tool.setuptools]
+packages = ["stop_words"]
+package-dir = {"" = "src"}
+package-data = {stop_words = [
+    "stop-words/*.txt",
+    "stop-words/languages.json",
+]}
+
+
+[tool.mypy]
+python_version = "3.13"
+exclude_gitignore = true
+
+[tool.coverage.run]
+cover_pylib = false
+omit = [
+    "*site-packages*",
+    "*distutils*",
+    "venv/*",
+    ".venv/*",
+    "_version.py",
+]
+
+[tool.coverage.report]
+precision = 3
+show_missing = true
+ignore_errors = true
+# Regexes for lines to exclude from consideration
+exclude_lines = [
+    # Have to re-enable the standard pragma
+    "pragma: no cover",
+
+    # Don't complain about missing debug-only code:
+    "def __repr__",
+    "def __str__",
+    "if self\\.debug",
+
+    # Don't complain if tests don't hit defensive assertion code:
+    "raise AssertionError",
+    "raise NotImplementedError",
+
+    # Don't complain if non-runnable code isn't run:
+    "if 0:",
+    "if __name__ == .__main__.:",
+]
+skip_covered = true
+
+
+[tool.black]
+line-length = 120
+target-version = ['py313']
+extend-exclude = '''
+/(
+  build
+  | \.venv
+  | src/stop_words/stop-words
+)/
+'''
+
+
+[tool.isort]
+line_length = 120
+extend_skip = ["src/stop_words/stop-words", "src/stop_words/_version.py"]
+sections = "FUTURE,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+indent = 4
+multi_line_output = 3
+include_trailing_comma = true
+order_by_type = true
+combine_as_imports = true
+lines_after_imports = 2
+float_to_top = true
+atomic = true
