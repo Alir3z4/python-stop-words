@@ -1,4 +1,4 @@
-2025.11.3
+2025.11.4
 =========
 
 * Sync with latest of https://github.com/Alir3z4/stop-words.
