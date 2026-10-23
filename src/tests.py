@@ -186,7 +186,7 @@ class TestStopWordsFilters(TestCase):
     def test_language_specific_filter(self) -> None:
         """Language-specific filters should only affect that language."""
 
-        def uppercase_filter(words: list[str], _language: str | None = None) -> list[str]:
+        def uppercase_filter(words: list[str]) -> list[str]:
             return [w.upper() for w in words]
 
         add_filter(uppercase_filter, language="english")
@@ -243,7 +243,7 @@ class TestStopWordsFilters(TestCase):
     def test_remove_filter_with_language(self) -> None:
         """Language-specific filter removal should work."""
 
-        def lang_filter(words: list[str], _language: str | None = None) -> list[str]:
+        def lang_filter(words: list[str]) -> list[str]:
             return words
 
         add_filter(lang_filter, language="english")

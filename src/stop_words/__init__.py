@@ -13,8 +13,7 @@ This module provides:
 
 import json
 from pathlib import Path
-from typing import Callable
-
+from typing import Callable, cast
 
 # Directory configuration
 CURRENT_DIR = Path(__file__).resolve().parent
@@ -22,7 +21,10 @@ STOP_WORDS_DIR = CURRENT_DIR / "stop-words"
 
 # Global caches
 STOP_WORDS_CACHE: dict[str, list[str]] = {}
-_filters: dict[str | None, list[Callable[[list[str], str | None], list[str]]]] = {None: []}
+_LanguageFilter = Callable[[list[str]], list[str]]
+_GlobalFilter = Callable[[list[str], str | None], list[str]]
+_Filter = _LanguageFilter | _GlobalFilter
+_filters: dict[str | None, list[_Filter]] = {None: []}
 
 # Load language mapping configuration
 _languages_file = STOP_WORDS_DIR / "languages.json"
@@ -109,18 +111,18 @@ def apply_filters(stopwords: list[str], language: str | None) -> list[str]:
     :returns: Filtered list of stop words.
     """
     # Apply language-specific filters
-    if language in _filters:
+    if language is not None and language in _filters:
         for func in _filters[language]:
-            stopwords = func(stopwords, language)
+            stopwords = cast(_LanguageFilter, func)(stopwords)
 
     # Apply global filters
     for func in _filters[None]:
-        stopwords = func(stopwords, language)
+        stopwords = cast(_GlobalFilter, func)(stopwords, language)
 
     return stopwords
 
 
-def add_filter(func: Callable[[list[str], str | None], list[str]], *, language: str | None = None) -> None:
+def add_filter(func: _Filter, *, language: str | None = None) -> None:
     """
     Register a filter function for stop word post-processing.
 
@@ -135,7 +137,7 @@ def add_filter(func: Callable[[list[str], str | None], list[str]], *, language: 
 
     Example:
         >>> # Add a filter to uppercase all stop words for English
-        >>> add_filter(lambda words: [w.upper() for w in words], 'english')
+        >>> add_filter(lambda words: [w.upper() for w in words], language='english')
         >>> # Add a global filter to remove single-character words
         >>> add_filter(lambda words, lang: [w for w in words if len(w) > 1])
     """
@@ -149,7 +151,7 @@ def add_filter(func: Callable[[list[str], str | None], list[str]], *, language: 
     _filters[language].append(func)
 
 
-def remove_filter(func: Callable[[list[str], str | None], list[str]], *, language: str | None = None) -> bool:
+def remove_filter(func: _Filter, *, language: str | None = None) -> bool:
     """
     Unregister a previously registered filter function.
 
